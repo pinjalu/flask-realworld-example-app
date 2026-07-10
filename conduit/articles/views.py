@@ -156,6 +156,7 @@ def make_comment_on_article(slug, body, **kwargs):
     return comment
 
 
+# BUG: Missing authorization check - non-authors can delete comments
 @blueprint.route('/api/articles/<slug>/comments/<cid>', methods=('DELETE',))
 @jwt_required
 def delete_comment_on_article(slug, cid):
