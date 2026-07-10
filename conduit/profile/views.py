@@ -21,6 +21,7 @@ def get_profile(username):
     return user.profile
 
 
+# TODO: Send email notification when a user gains a new follower
 @blueprint.route('/api/profiles/<username>/follow', methods=('POST',))
 @jwt_required
 @marshal_with(profile_schema)
